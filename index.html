@@ -3,227 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Re:Play Mobile: un comandament Bluetooth amb carcassa de materials reutilitzats que converteix el mòbil en una consola portàtil.">
-  <title>Re:Play Mobile | ReLoop Gaming</title>
-  <style>
-    :root {
-      --bg: #0b1110; --panel: #121d19; --panel2: #17251f;
-      --green: #b7f36b; --mint: #70d6b0; --text: #f2f6f1;
-      --muted: #aab8af; --line: rgba(255,255,255,.12);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: Inter, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-    a { color: inherit; text-decoration: none; }
-    .wrap { width: min(1120px, 90%); margin: auto; }
-    header { position: sticky; top: 0; z-index: 10; background: rgba(11,17,16,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { font-weight: 900; letter-spacing: -.7px; font-size: 1.15rem; }
-    .brand span { color: var(--green); }
-    .navlinks { display: flex; gap: 22px; color: var(--muted); font-size: .92rem; }
-    .navlinks a:hover { color: var(--green); }
-    .hero { padding: 76px 0 70px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
-    .eyebrow { color: var(--green); text-transform: uppercase; letter-spacing: 2px; font-size: .78rem; font-weight: 800; }
-    h1 { font-size: clamp(2.8rem, 6vw, 5.2rem); line-height: .98; letter-spacing: -3px; margin: 18px 0; }
-    h1 span { color: var(--green); }
-    .lead { color: var(--muted); font-size: 1.12rem; max-width: 580px; }
-    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .btn { display: inline-block; padding: 13px 20px; border-radius: 999px; font-weight: 800; background: var(--green); color: #132014; }
-    .btn.secondary { background: transparent; border: 1px solid var(--line); color: var(--text); }
-    .hero-img { min-height: 420px; border-radius: 28px; overflow: hidden; position: relative; background: #25352c; }
-    .hero-img img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; display: block; opacity: .83; }
-    .image-tag { position: absolute; bottom: 18px; left: 18px; right: 18px; background: rgba(8,15,12,.82); padding: 14px 18px; border: 1px solid var(--line); border-radius: 16px; }
-    section { padding: 72px 0; border-top: 1px solid var(--line); }
-    .section-head { max-width: 700px; margin-bottom: 32px; }
-    h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; letter-spacing: -1.5px; margin: 10px 0 14px; }
-    h3 { margin: 0 0 8px; }
-    .muted { color: var(--muted); }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { background: var(--panel); border: 1px solid var(--line); padding: 24px; border-radius: 20px; }
-    .card .icon { font-size: 1.7rem; margin-bottom: 12px; }
-    .photo-card { padding: 0; overflow: hidden; }
-    .photo-card img { width: 100%; height: 190px; object-fit: cover; display: block; }
-    .photo-card div { padding: 20px; }
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: center; }
-    .split img { width: 100%; height: 360px; object-fit: cover; border-radius: 24px; }
-    .steps { display: grid; gap: 12px; }
-    .step { display: flex; gap: 16px; padding: 16px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
-    .num { flex: 0 0 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: #132014; font-weight: 900; }
-    .specs { width: 100%; border-collapse: collapse; background: var(--panel); border-radius: 16px; overflow: hidden; }
-    .specs td { padding: 14px 16px; border-bottom: 1px solid var(--line); }
-    .specs td:first-child { color: var(--muted); width: 42%; }
-    .specs tr:last-child td { border-bottom: 0; }
-    .banner { padding: 38px; border-radius: 26px; background: linear-gradient(120deg, #203b2b, #17251f); border: 1px solid rgba(183,243,107,.28); }
-    footer { padding: 32px 0; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
-    .small { font-size: .86rem; color: var(--muted); }
-    @media (max-width: 760px) {
-      .hero, .split { grid-template-columns: 1fr; }
-      .hero { padding-top: 48px; }
-      .hero-img, .hero-img img { min-height: 300px; }
-      .grid { grid-template-columns: 1fr; }
-      .navlinks { gap: 10px; font-size: .78rem; flex-wrap: wrap; justify-content: flex-end; }
-      h1 { letter-spacing: -2px; }
-      section { padding: 54px 0; }
-    }
-  </style>
+  <meta name="description" content="RE-PLAY transforma materials informàtics reutilitzats en nous accessoris per jugar. Descobreix TERRANOVA X.">
+  <meta name="theme-color" content="#101510">
+  <title>RE-PLAY | TERRANOVA X</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <nav>
-      <a class="brand" href="#inici">RE<span>:</span>LOOP GAMING</a>
-      <div class="navlinks">
-        <a href="#producte">Producte</a><a href="#funciona">Com funciona</a><a href="#circular">Reciclatge</a><a href="#empresa">Empresa</a>
-      </div>
+  <header class="site-header">
+    <a class="brand" href="#inici" aria-label="RE-PLAY, inici"><img src="assets/logo.svg" alt="" class="brand-mark"><span>RE-PLAY</span></a>
+    <button class="menu-toggle" aria-label="Obrir menú" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Navegació principal">
+      <a href="#producte">Producte</a><a href="#nosaltres">Qui som</a><a href="#sostenibilitat">Sostenibilitat</a><a href="#contacte" class="nav-cta">Contacte</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main>
-  <div class="wrap hero" id="inici">
-    <div>
-      <div class="eyebrow">Tecnologia · videojocs · economia circular</div>
-      <h1>El teu mòbil.<br><span>La teva consola.</span></h1>
-      <p class="lead"><strong>Re:Play Mobile</strong> és un comandament Bluetooth amb una carcassa creada a partir de materials reutilitzats. Col·loca-hi el mòbil, connecta el comandament i juga d'una manera més sostenible.</p>
-      <div class="buttons">
-        <a class="btn" href="#producte">Descobreix el producte</a>
-        <a class="btn secondary" href="#circular">El nostre compromís</a>
+  <main>
+    <section class="hero" id="inici">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> TECNOLOGIA AMB UNA SEGONA VIDA</p>
+        <h1>Juga diferent.<br><span>Reutilitza millor.</span></h1>
+        <p class="hero-text">Donem una nova vida a peces informàtiques per crear accessoris de videojocs. Descobreix una altra manera de jugar amb RE-PLAY.</p>
+        <div class="hero-actions"><a class="button button-green" href="#producte">Descobreix TERRANOVA X <span>↗</span></a><a class="text-link" href="#sostenibilitat">La nostra idea <span>↓</span></a></div>
+        <div class="hero-note"><span class="note-icon">↻</span><span>Reutilitzar recursos també és<br><strong>part del joc.</strong></span></div>
       </div>
-    </div>
-    <div class="hero-img">
-      <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1200&q=85" alt="Dispositiu de videojocs i tecnologia">
-      <div class="image-tag"><strong>RE:PLAY MOBILE</strong><br><span class="small">Un comandament reutilitzat, moltes noves partides.</span></div>
-    </div>
-  </div>
+      <div class="hero-art">
+        <div class="art-glow"></div><div class="art-tag">NOU CONCEPTE <b>01 / 01</b></div>
+        <img src="assets/controller.svg" alt="Il·lustració del comandament TERRANOVA X, amb creueta, dos joysticks i botons d'acció" class="controller-art">
+        <div class="art-caption"><span>TERRANOVA X</span><span>PLAY WITH PURPOSE.</span></div>
+      </div>
+    </section>
 
-  <section id="producte">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">El producte</div>
-        <h2>Una nova manera de jugar.</h2>
-        <p class="muted">Re:Play Mobile transforma el telèfon en la pantalla d'una consola portàtil. El comandament envia les ordres dels botons al mòbil mitjançant Bluetooth.</p>
-      </div>
-      <div class="grid">
-        <article class="card photo-card">
-          <img src="https://images.unsplash.com/photo-1603481546238-487240415921?auto=format&fit=crop&w=900&q=85" alt="Comandament de videojocs">
-          <div><h3>Controls físics</h3><p class="muted">Botons direccionals, botons d'acció i controls de menú per jugar amb comoditat.</p></div>
-        </article>
-        <article class="card photo-card">
-          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=85" alt="Persona jugant a videojocs">
-          <div><h3>El mòbil és la pantalla</h3><p class="muted">El telèfon es col·loca en un suport central i mostra el videojoc compatible.</p></div>
-        </article>
-        <article class="card photo-card">
-          <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=85" alt="Components electrònics i ordinador">
-          <div><h3>Disseny reutilitzat</h3><p class="muted">La carcassa aprofita plàstics i peces recuperades d'equips informàtics en desús.</p></div>
-        </article>
-      </div>
-    </div>
-  </section>
+    <section class="ticker" aria-label="Lema de RE-PLAY"><span>REUTILITZA</span><i>✳</i><span>RECUPERA</span><i>✳</i><span>TORNA A JUGAR</span><i>✳</i><span>REUTILITZA</span><i>✳</i><span>RECUPERA</span></section>
 
-  <section id="funciona">
-    <div class="wrap split">
-      <div>
-        <div class="eyebrow">Com funciona</div>
-        <h2>Connecta. Col·loca. Juga.</h2>
-        <p class="muted">El prototip utilitza una placa ESP32 amb Bluetooth, que interpreta els botons i envia les ordres al dispositiu mòbil. Cal configurar-lo perquè sigui reconegut com un comandament compatible i provar-lo amb jocs que acceptin controls externs.</p>
-        <div class="steps">
-          <div class="step"><span class="num">1</span><div><strong>Col·loca el mòbil</strong><div class="small">El suport manté el telèfon al centre del comandament.</div></div></div>
-          <div class="step"><span class="num">2</span><div><strong>Connecta per Bluetooth</strong><div class="small">L'ESP32 comunica les ordres dels controls al mòbil.</div></div></div>
-          <div class="step"><span class="num">3</span><div><strong>Obre un joc compatible</strong><div class="small">Tria un videojoc que permeti jugar amb un comandament extern.</div></div></div>
+    <section class="product section" id="producte">
+      <div class="section-heading"><p class="eyebrow">EL NOSTRE PRODUCTE</p><h2>Una nova vida.<br><span>Una nova manera de jugar.</span></h2></div>
+      <div class="product-grid">
+        <div class="product-visual"><div class="visual-label">RE-PLAY / TERRANOVA X</div><img src="assets/controller.svg" alt="Vista frontal del controlador TERRANOVA X"><span class="visual-bottom">DISSENY INSPIRAT EN LA REUTILITZACIÓ</span></div>
+        <div class="product-info"><p class="product-kicker">CONEIX-LO</p><h3>TERRANOVA <span>X</span></h3><p class="lead">Un controlador físic pensat per gaudir dels videojocs del mòbil amb la comoditat d'un comandament.</p><p>El TERRANOVA X és un comandament independent que es connecta al telèfon mitjançant Bluetooth. El mòbil continua sent la pantalla: el controlador serveix per jugar amb botons i joysticks físics.</p>
+          <ul class="feature-list"><li><span>01</span><div><strong>Connexió Bluetooth</strong><small>Es connecta sense fils a un dispositiu compatible.</small></div></li><li><span>02</span><div><strong>Controls complets</strong><small>Creueta, dos joysticks i botons A, B, X i Y.</small></div></li><li><span>03</span><div><strong>Materials recuperats</strong><small>Una carcassa que incorpora materials reutilitzats.</small></div></li></ul>
+          <a class="button button-dark" href="#contacte">Més informació <span>↗</span></a>
         </div>
       </div>
-      <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1100&q=85" alt="Consoles i videojocs retro">
-    </div>
-  </section>
+    </section>
 
-  <section id="circular">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Economia circular</div>
-        <h2>Donem una segona vida a la tecnologia.</h2>
-        <p class="muted">El projecte vol reduir residus electrònics i demostrar que alguns materials d'aparells antics poden tenir una nova utilitat.</p>
-      </div>
-      <div class="grid">
-        <article class="card"><div class="icon">♻️</div><h3>Reutilitzar</h3><p class="muted">Recuperem plàstic de carcasses, peces de teclats, cargols i cables en bon estat per fabricar parts del prototip.</p></article>
-        <article class="card"><div class="icon">🧰</div><h3>Reparar i aprofitar</h3><p class="muted">Abans de comprar materials nous, comprovem si podem aprofitar components recuperats de dispositius que ja no s'utilitzen.</p></article>
-        <article class="card"><div class="icon">🌱</div><h3>Reduir residus</h3><p class="muted">Allarguem la vida útil dels materials i evitem que acabin prematurament com a residus.</p></article>
-      </div>
-      <p class="small" style="margin-top:18px">Nota: els components electrònics que no es puguin recuperar (com la placa ESP32 o alguns botons) s'adquiriran nous. Les bateries velles no es reutilitzaran; s'han de portar a un punt de recollida adequat.</p>
-    </div>
-  </section>
+    <section class="manifesto" id="nosaltres"><div class="manifesto-mark">R<span>↻</span></div><div><p class="eyebrow">QUI SOM</p><h2>No volem crear més residus.<br><span>Volem crear noves oportunitats.</span></h2><p>RE-PLAY és una empresa que neix amb una idea clara: aprofitar peces i materials informàtics que ja no s'utilitzen per convertir-los en productes nous i útils. Ens adrecem especialment als joves que gaudeixen dels videojocs i que també volen consumir tecnologia d'una manera més responsable.</p></div></section>
 
-  <section id="empresa">
-    <div class="wrap split">
-      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1100&q=85" alt="Equip treballant en un projecte tecnològic">
-      <div>
-        <div class="eyebrow">L'empresa</div>
-        <h2>ReLoop Gaming</h2>
-        <p class="muted">Som una proposta d'empresa tecnològica que combina videojocs, creativitat i sostenibilitat. El nostre objectiu és dissenyar accessoris útils a partir de materials recuperats.</p>
-        <h3>Objectiu</h3>
-        <p class="muted">Dissenyar i comercialitzar comandaments per a mòbils amb carcasses de materials reutilitzats, començant amb el prototip Re:Play Mobile.</p>
-        <h3>Com obtenim el producte?</h3>
-        <p class="muted">Recollim equips informàtics en desús de l'entorn proper, tallers o punts de reutilització. Seleccionem les peces aprofitables, netegem els materials, dissenyem la carcassa i muntem el circuit i els controls.</p>
-      </div>
-    </div>
-  </section>
+    <section class="sustain section" id="sostenibilitat">
+      <div class="section-heading"><p class="eyebrow">EL NOSTRE COMPROMÍS</p><h2>La tecnologia també<br><span>pot tenir una segona vida.</span></h2><p class="section-intro">Cada peça que es recupera és una oportunitat per reduir residus i aprofitar millor els recursos disponibles.</p></div>
+      <div class="values-grid"><article class="value-card"><div class="value-icon">↻</div><p class="value-number">01 / RECUPERAR</p><h3>Donar valor al que ja existeix</h3><p>Busquem components i materials informàtics que encara poden tenir una utilitat.</p></article><article class="value-card"><div class="value-icon">⌘</div><p class="value-number">02 / TRANSFORMAR</p><h3>Crear amb imaginació</h3><p>Replantegem l'ús de materials recuperats per donar forma a nous accessoris.</p></article><article class="value-card"><div class="value-icon">✳</div><p class="value-number">03 / REUTILITZAR</p><h3>Allargar la vida dels materials</h3><p>Incorporem materials reutilitzats al producte per fomentar una economia més circular.</p></article></div>
+      <div class="green-banner"><div><p class="eyebrow">EL FUTUR ÉS REUTILITZABLE</p><h3>No és només un comandament.<br>És una nova oportunitat.</h3></div><span class="banner-symbol">RE<span>↻</span></span></div>
+    </section>
 
-  <section id="public">
-    <div class="wrap">
-      <div class="section-head"><div class="eyebrow">A qui ens adrecem?</div><h2>Per a jugadors amb idees sostenibles.</h2></div>
-      <div class="grid">
-        <article class="card"><div class="icon">🎮</div><h3>Joves i aficionats als videojocs</h3><p class="muted">Persones que juguen amb el mòbil i volen controls físics.</p></article>
-        <article class="card"><div class="icon">📱</div><h3>Usuaris de tecnologia mòbil</h3><p class="muted">Persones que volen aprofitar el telèfon com a dispositiu de joc.</p></article>
-        <article class="card"><div class="icon">🌍</div><h3>Consumidors responsables</h3><p class="muted">Persones interessades en productes creatius, reutilització i reducció de residus.</p></article>
-      </div>
-    </div>
-  </section>
+    <section class="contact section" id="contacte"><div><p class="eyebrow">PARLEM DE TECNOLOGIA</p><h2>El pròxim nivell<br><span>comença aquí.</span></h2><p>T'interessa el projecte RE-PLAY o vols saber més sobre TERRANOVA X? Posa't en contacte amb nosaltres.</p></div><a class="button button-green" href="mailto:info@re-play.example?subject=Informaci%C3%B3%20sobre%20TERRANOVA%20X">Contacta amb RE-PLAY <span>↗</span></a></section>
+  </main>
 
-  <section id="marketing">
-    <div class="wrap split">
-      <div>
-        <div class="eyebrow">Estratègia de màrqueting</div>
-        <h2>Fem que la idea es conegui.</h2>
-        <ul class="muted">
-          <li><strong>Xarxes socials:</strong> vídeos curts a TikTok i Instagram mostrant el muntatge i el comandament en funcionament.</li>
-          <li><strong>Demostracions:</strong> provar el prototip en directe a classe, fires escolars o esdeveniments tecnològics.</li>
-          <li><strong>Missatge principal:</strong> “Converteix el teu mòbil en una consola i dona una segona vida als materials”.</li>
-          <li><strong>Venda online:</strong> una web amb fotografies, característiques, procés de fabricació i formulari de contacte.</li>
-        </ul>
-      </div>
-      <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1100&q=85" alt="Planificació i treball de màrqueting">
-    </div>
-  </section>
-
-  <section id="fitxa">
-    <div class="wrap">
-      <div class="section-head"><div class="eyebrow">Fitxa tècnica del prototip</div><h2>Què incorpora?</h2></div>
-      <table class="specs">
-        <tr><td>Nom del producte</td><td><strong>Re:Play Mobile</strong></td></tr>
-        <tr><td>Connexió</td><td>Bluetooth (mitjançant ESP32)</td></tr>
-        <tr><td>Pantalla</td><td>La pantalla del telèfon mòbil</td></tr>
-        <tr><td>Controls</td><td>Creueta o joystick, botons d'acció i botons de menú</td></tr>
-        <tr><td>Materials recuperats</td><td>Plàstic de carcasses, peces de teclat, cargols i cables aprofitables</td></tr>
-        <tr><td>Cost orientatiu del prototip</td><td>12–19 € aproximadament, segons els components i materials disponibles</td></tr>
-      </table>
-      <p class="small" style="margin-top:12px">És una estimació per a un prototip escolar, no un preu de venda. La compatibilitat final dependrà de la programació, del mòbil i del videojoc utilitzat.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="banner">
-        <div class="eyebrow">Re:Play Mobile</div>
-        <h2>Juga més. Reutilitza millor.</h2>
-        <p class="muted">La tecnologia del futur també pot començar amb peces que ja tenim.</p>
-        <a class="btn" href="mailto:reloopgaming@example.com?subject=Informaci%C3%B3%20sobre%20Re%3APlay%20Mobile">Contacta amb nosaltres</a>
-        <p class="small">Canvia aquest correu d'exemple pel correu de contacte del projecte abans de publicar la web.</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">© 2026 ReLoop Gaming · Projecte educatiu de tecnologia i economia circular.<br><span class="small">Les imatges són fotografies il·lustratives; no representen necessàriament el prototip final.</span></div>
-</footer>
+  <footer class="footer"><a class="brand footer-brand" href="#inici"><img src="assets/logo.svg" alt=""><span>RE-PLAY</span></a><p>Una segona vida per a la tecnologia.</p><span class="copyright">© 2026 RE-PLAY · Projecte d'economia circular</span></footer>
+  <script src="script.js"></script>
 </body>
 </html>
